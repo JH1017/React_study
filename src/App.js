@@ -1,6 +1,70 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
+class Subject extends Component {
+  render(){
+     return (
+      <header>
+        <h1>WEB</h1>
+        world wide web!
+      </header>
+     )
+  }
+}
+
+class TOC extends Component {
+  render(){
+     return (
+      <nav>
+        <ul>
+            <li href="1.html"><a>HTML</a></li>
+            <li href="2.html"><a>CSS</a></li>
+            <li href="3.html"><a>JavaScript</a></li>
+        </ul>
+      </nav>
+     )
+  }
+}
+
+class Content extends Component {
+  render(){
+     return (
+      <article>
+        <h2>HTML</h2>
+        HTML is HyperText Markup Language
+      </article>
+     )
+  }
+}
+
+
+class App extends Component {
+  render() {
+    return(
+      <div className='App'>
+        <Subject></Subject>
+        <TOC></TOC>
+        <Content></Content>
+        {/* <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header> */}
+      </div>
+      );
+  }
+}
+
+/*
 function App() {
   return (
     <div className="App">
@@ -21,5 +85,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App;
