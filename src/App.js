@@ -45,7 +45,7 @@ class App extends Component {
         <Subject title="WEB" sub="world wide web!"></Subject>
         <Subject title="REACT" sub="For UI!"></Subject>
         <TOC></TOC>
-        <Content title="HTML" desc="HTML is HyperText Markup Language~"></Content>
+        <Content title="HTML" desc="HTML is HyperText Markup Language!"></Content>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
