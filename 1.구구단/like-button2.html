@@ -13,28 +13,24 @@
 <script type="text/babel">
   'use strict';
 
-  const e = React.createElement;
-
-  class LikeButton extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {liked: false}; // 기존의 객체를 변경하지 말고 복사하자!
+  //const LikeButton = ()=> {
+  function LikeButton(){ // 함수 컴포넌트 
+    // 함수 컴포넌트 좋은 점: this 쓸 일이 없다
+    const [liked, setLiked] = React.useState(false); // 구조분해
+    if(liked){
+      return 'You liked this.';
     }
+    return (
+      <button onClick={() => { setLiked(true); }}>Like</button>
+    )
+/*
+    const [news, setNews] = React.useState(['뉴스1','뉴스2','뉴스3','뉴스4','뉴스5']);
+    const [category, setCategory] = React.useState(['스포츠','연예','경제','시사','정치']);
 
-    render() {
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-      // 1. 원래의 코드
-      //return e('button', {onClick: () => this.setState({liked: true})}, 'Like');
-      // JSX로 변환
-      return(
-        // babel 라이브러리가 1. 원래의 코드로 뒤에서 변경을 해줌!
-        <button onClick={() => this.setState({liked:true})}>
-          Like
-        </button>
-      )
+    if(category === '스포츠'){
+      return '스포츠 화면';
     }
+*/     
   }
 </script>
 <script type="text/babel">
