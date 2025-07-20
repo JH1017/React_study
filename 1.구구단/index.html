@@ -16,11 +16,11 @@
             //     super(props);
             //     this.state = {
             state = {
-                    first: Math.ceil(Math.random() * 9),
-                    second: Math.ceil(Math.random() * 9),
-                    value: '',
-                    result: '',
-                }
+                first: Math.ceil(Math.random() * 9),
+                second: Math.ceil(Math.random() * 9),
+                value: '',
+                result: '',
+                
             }
 
             onSubmit = (e) => {
@@ -34,7 +34,7 @@
                             value: '',
                         }
                     });
-
+                    this.input.focus();
                     /*this.setState({
                         result: (this.state.value) + ' 정답',
                         first: Math.ceil(Math.random() * 9),
@@ -46,6 +46,7 @@
                         result: '땡',
                         value: '',
                     });
+                    this.input.focus();
                 }
             }
 
@@ -53,12 +54,14 @@
                 this.setState({value: e.target.value});
             }
 
+            onRefInput = (c) => {this.input = c;};
+
             render(){
                 return (
                     <React.Fragment>
                         <div>{this.state.first} 곱하기 {this.state.second}는?</div>
                         <form onSubmit={this.onSubmit}>
-                            <input type="number" value={this.state.value} onChange={this.onChange} />
+                            <input ref={this.onRefInput} type="number" value={this.state.value} onChange={this.onChange} />
                             <button>입력!</button>
                         </form>
                         <div>{this.state.result}</div>
