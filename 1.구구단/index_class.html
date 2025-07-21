@@ -53,8 +53,10 @@
             onChange = (e) => {
                 this.setState({value: e.target.value});
             }
-
-            input;
+            
+            // TypeScript에서 주로 보이는데 타입을 선언해서 DOM 요소에서 접근하기 위해 사용
+            // 자바스크립트에서는 생략이 가능하지만, TypeScript에서는 타입 명시와 함께 선언하는게 일반적 >> 오류를 피할 수 있다
+            input; // 필트만 선언
 
             onRefInput = (c) => {this.input = c;};
 
