@@ -26,7 +26,7 @@
 
             const onSubmitForm = (e) => {
                 e.preventDefault();
-                if(parseInt(this.state.value) === this.state.first * this.state.second){
+                if(parseInt(value) === first * second){
                     setResult('정답: ' + value);
                     setFirst(Math.ceil(Math.random() * 9))
                     setSecond(Math.ceil(Math.random() * 9))
@@ -39,12 +39,13 @@
                     inputRef.current.focus();
                 }
             }
-
+            // hmtl에서의 class는 리액트에서 className으로 쓴다.
+            // label 태그의 for는 htmlFor를 사용한다
             return (
                 <React.Fragment>
                     <div>{first} 곱하기 {second}는? </div>
-                    <form onSubmitForm={}>
-                        <input ref={} onChange={onChangeInput} value={value} />    
+                    <form onSubmitForm={onSubmitForm}>
+                        <input ref={inputRef} onChange={onChangeInput} value={value} />    
                         <button>입력!</button>
                         <div id="result">{result}</div>
                     </form>
